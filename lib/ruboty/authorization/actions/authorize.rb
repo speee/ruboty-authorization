@@ -10,7 +10,11 @@ module Ruboty::Authorization::Actions
     private
     def authorize
       user_name = message.match_data[1]
-      @user_list.add({name: user_name}).add_message
+      if user = @user_list.find_by_name(user_name)
+        user.message(new: false)
+      else
+        @user_list.add({name: user_name}).message(new: true)
+      end
     end
   end
 end

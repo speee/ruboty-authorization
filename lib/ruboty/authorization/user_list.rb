@@ -18,6 +18,10 @@ module Ruboty::Authorization
       user
     end
 
+    def find_by_name(name)
+      users.find { |user| user.name == name }
+    end
+
     private
 
     def list

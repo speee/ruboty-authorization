@@ -9,8 +9,12 @@ module Ruboty::Authorization
       end
     end
 
-    def add_message
-      "#{@name}を追加しました"
+    def message(new: false)
+      if new
+        "#{@name}を追加しました"
+      else
+        "#{@name}は既に追加されています"
+      end
     end
   end
 end
