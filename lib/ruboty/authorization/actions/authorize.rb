@@ -1,18 +1,15 @@
-module Ruboty
-  module RubotyAuthorization
-    module Actions
-      class Authorize < Ruboty::Actions::Base
-        def call
-          message.reply(authorize)
-        rescue => e
-          message.reply(e.message)
-        end
+module Ruboty::Authorization::Actions
+  class Authorize < Ruboty::Actions::Base
+    attr_reader :user_list
 
-        private
-        def authorize
-          # TODO: main logic
-        end
-      end
+    def call
+      @user_list = ::Ruboty::Authorization::UserList.new(message.robot.brain)
+      message.reply(authorize)
+    end
+
+    private
+    def authorize
+      @user_list.add({name: 'hogehoge'})
     end
   end
 end
