@@ -8,5 +8,9 @@ module Ruboty::Authorization
         self.send("#{attr}=".to_sym, params[attr]) if params.key?(attr)
       end
     end
+
+    def add_message
+      "#{@name}を追加しました"
+    end
   end
 end
