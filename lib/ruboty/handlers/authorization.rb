@@ -6,9 +6,8 @@ module Ruboty
       on(/authorize +(.*)/m, name: 'authorize', description: '特定のユーザーのみ実行できるようにする')
 
       def authorize(message)
-        Ruboty::Authorization::Actions::Authorize.new(message).call
+        Ruboty::Authorization::Authorize.new(message).call
       end
-
     end
   end
 end

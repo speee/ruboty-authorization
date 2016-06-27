@@ -1,12 +1,9 @@
 module Ruboty::Authorization
   class User
-    ATTRIBUTES = %i(name)
-    ATTRIBUTES.each { |attr| attr_accessor attr }
+    attr_accessor :name
 
     def initialize(params)
-      ATTRIBUTES.each do |attr|
-        self.send("#{attr}=".to_sym, params[attr]) if params.key?(attr)
-      end
+      @name = params[:name].gsub('@','') if params[:name]
     end
 
     def message(new: false)
@@ -18,3 +15,4 @@ module Ruboty::Authorization
     end
   end
 end
+
