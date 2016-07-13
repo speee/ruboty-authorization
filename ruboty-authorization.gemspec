@@ -9,16 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Morioka Shuhei"]
   spec.email         = ["selmertsx@gmail.com"]
 
-  spec.summary       = %q{ Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{ Write a longer description or delete this line.}
+  spec.summary       = %q{ Authorization Library for Ruboty plugin tasks }
+  spec.description   = %q{ Authorization Library for Ruboty plugin tasks }
   spec.homepage      = ""
   spec.license       = "MIT"
-
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = " Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
-  end
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
