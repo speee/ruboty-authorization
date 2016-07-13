@@ -9,12 +9,13 @@ module Ruboty
     class AuthenticationError < StandardError; end
 
     def call(handler, message, options = {})
-      if !!options[:missing] == missing? && message.match(pattern_with(handler.robot.name))
-        authorized!(message)
-        !!handler.send(name, message)
-      else
-        false
-      end
+      return false unless !!options[:missing] == missing?
+      return false unless message.match(pattern_with(handler.robot.name))
+
+      authorized!(message)
+      !!handler.send(name, message)
+    rescue => e
+      message.reply(e.message)
     end
 
     def authorized!(message)
