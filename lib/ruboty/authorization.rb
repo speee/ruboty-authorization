@@ -24,7 +24,7 @@ module Ruboty
       return if [ self.name , owner_name ].include? message.from_name
       return if @user_list.find_by_name(message.from_name)
 
-      raise AuthenticationError.new("#{message.from_name} は許可されていないユーザーです")
+      raise AuthenticationError.new("#{message.from_name} is not authorized user")
     end
 
     def owner_name

@@ -1,4 +1,4 @@
-module Ruboty::Authorization
+module Ruboty::Authorization::Action
   class Authorize < Ruboty::Actions::Base
     attr_reader :user_list
 
