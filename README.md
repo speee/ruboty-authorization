@@ -31,6 +31,12 @@ authorize user
 @bot_name authorize user_name
 ```
 
+return authorized users
+
+```
+@bot_name users
+```
+
 ## Env
 
 ```
