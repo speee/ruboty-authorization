@@ -48,3 +48,4 @@ NOT_REPLY_AUTHORIZATION_ERROR - If set to '1', not reply authorization error mes
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
