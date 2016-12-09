@@ -6,7 +6,7 @@ require 'ruboty/authorization/version'
 Gem::Specification.new do |spec|
   spec.name          = "ruboty-authorization"
   spec.version       = Ruboty::Authorization::VERSION
-  spec.authors       = ["Morioka Shuhei"]
+  spec.authors       = ["Morioka Shuhei", "Speee, Inc."]
   spec.email         = ["selmertsx@gmail.com"]
 
   spec.summary       = %q{ Authorization Library for Ruboty plugin tasks }
