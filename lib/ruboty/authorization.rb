@@ -15,7 +15,7 @@ module Ruboty
       authorized!(message)
       !!handler.send(name, message)
     rescue => e
-      message.reply(e.message)
+      message.reply(e.message) if reply_error?
     end
 
     def authorized!(message)
@@ -29,6 +29,10 @@ module Ruboty
 
     def owner_name
       ENV["OWNER_NAME"]
+    end
+
+    def reply_error?
+      ENV['NOT_REPLY_AUTHORIZATION_ERROR'].nil?
     end
   end
 end
